@@ -1,6 +1,6 @@
-package com.LITH.web.interfaces;
+package com.LITH.sjwabackend.web.interfaces;
 
-import com.LITH.web.models.MarvelCharacter;
+import com.LITH.sjwabackend.web.models.MarvelCharacter;
 
 import java.util.List;
 

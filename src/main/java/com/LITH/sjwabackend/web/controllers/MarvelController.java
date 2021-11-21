@@ -1,17 +1,16 @@
-package com.LITH.web.controllers;
+package com.LITH.sjwabackend.web.controllers;
 
-import com.LITH.web.interfaces.IMarvelService;
-import com.LITH.web.models.MarvelCharacter;
-import com.LITH.web.services.MarvelService;
+import com.LITH.sjwabackend.web.interfaces.IMarvelService;
+import com.LITH.sjwabackend.web.models.MarvelCharacter;
+import com.LITH.sjwabackend.web.services.MarvelService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin("http://localhost:3000") //this is not production ready
 public class MarvelController {
 
     private final IMarvelService marvelService;
@@ -21,7 +20,7 @@ public class MarvelController {
         this.marvelService = marvelService;
     }
 
-    @GetMapping("/api/v1/marvel/characters")
+    @RequestMapping(value = "/api/v1/marvel/characters", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<?> GetAllCharacters(){
         try{
@@ -32,5 +31,4 @@ public class MarvelController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex);
         }
     }
-
 }

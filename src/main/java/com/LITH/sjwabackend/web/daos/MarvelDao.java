@@ -1,7 +1,7 @@
-package com.LITH.web.daos;
+package com.LITH.sjwabackend.web.daos;
 
-import com.LITH.web.interfaces.IMarvelDao;
-import com.LITH.web.models.MarvelCharacter;
+import com.LITH.sjwabackend.web.interfaces.IMarvelDao;
+import com.LITH.sjwabackend.web.models.MarvelCharacter;
 
 import java.util.*;
 

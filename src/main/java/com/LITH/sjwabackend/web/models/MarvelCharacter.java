@@ -1,4 +1,4 @@
-package com.LITH.web.models;
+package com.LITH.sjwabackend.web.models;
 
 public class MarvelCharacter {
 
