@@ -10,12 +10,13 @@ public class MarvelDao implements IMarvelDao {
         List<MarvelCharacter> chars = new ArrayList<>();
         MarvelCharacter temp;
 
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < 20; i++){
             temp = new MarvelCharacter();
-            temp.setCharID(i+1);
+            temp.setCharacterId(i+1);
             temp.setName("Character " + i);
             temp.setDescription("Description " + i);
-            temp.setImgUri("Uri " + i);
+            if(i % 2 == 0)
+                temp.setFavorite(true);
             chars.add(temp);
         }
 
@@ -35,5 +36,17 @@ public class MarvelDao implements IMarvelDao {
         // &apikey=xxxxx
 
         return chars;
+    }
+    public MarvelCharacter GetCharacter(int characterId){
+        MarvelCharacter temp = new MarvelCharacter();
+
+        //don't worry, this is temporary
+        temp.setCharacterId(characterId);
+        temp.setDescription("This guy got hit with a big ol' wad of Atomic energy, and became " +
+                "a wad man. Capable of creating wads consisting of anything, " +
+                "he is a menace to society");
+
+
+        return temp;
     }
 }

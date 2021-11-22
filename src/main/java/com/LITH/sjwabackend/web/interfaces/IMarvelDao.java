@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IMarvelDao {
     List<MarvelCharacter> GetAllCharacters();
+    MarvelCharacter GetCharacter(int characterId);
 }

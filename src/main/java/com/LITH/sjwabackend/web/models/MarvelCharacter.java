@@ -2,19 +2,20 @@ package com.LITH.sjwabackend.web.models;
 
 public class MarvelCharacter {
 
-    private int charID;
+    private int characterId;
     private String name;
     private String description;
-    private String imgUri;
+    private String imageUrl;
+    private boolean isFavorite;
 
     //region Getters and Setters
 
-    public int getCharID() {
-        return charID;
+    public int getCharacterId() {
+        return characterId;
     }
 
-    public void setCharID(int charID) {
-        this.charID = charID;
+    public void setCharacterId(int characterId) {
+        this.characterId = characterId;
     }
 
     public String getName() {
@@ -33,12 +34,20 @@ public class MarvelCharacter {
         this.description = description;
     }
 
-    public String getImgUri() {
-        return imgUri;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImgUri(String imgUri) {
-        this.imgUri = imgUri;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
     }
 
     //endregion

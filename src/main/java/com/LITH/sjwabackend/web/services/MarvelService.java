@@ -18,8 +18,14 @@ public class MarvelService implements IMarvelService {
     }
 
     public List<MarvelCharacter> GetAllCharacters() {
-        List<MarvelCharacter> chars = marvelDao.GetAllCharacters();
+        List<MarvelCharacter> characters = marvelDao.GetAllCharacters();
 
-        return chars;
+        return characters;
+    }
+
+    public MarvelCharacter GetCharacter(int characterId) {
+        MarvelCharacter character = marvelDao.GetCharacter(characterId);
+
+        return character;
     }
 }

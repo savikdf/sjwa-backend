@@ -31,4 +31,16 @@ public class MarvelController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex);
         }
     }
+
+    @RequestMapping(value = "/api/v1/marvel/characters/{characterID}", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<?> GetCharacter(int characterId){
+        try{
+            MarvelCharacter character = marvelService.GetCharacter(characterId);
+
+            return ResponseEntity.ok().body(character);
+        }catch (Exception ex){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex);
+        }
+    }
 }
