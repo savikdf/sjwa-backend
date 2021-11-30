@@ -1,7 +1,8 @@
 package com.LITH.sjwabackend.web.controllers;
 
 import com.LITH.sjwabackend.web.interfaces.IMarvelService;
-import com.LITH.sjwabackend.web.models.MarvelCharacter;
+import com.LITH.sjwabackend.web.models.Character;
+import com.LITH.sjwabackend.web.models.WrappedCharacter;
 import com.LITH.sjwabackend.web.services.MarvelService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +25,7 @@ public class MarvelController {
     @ResponseBody
     public ResponseEntity<?> GetAllCharacters(){
         try{
-            List<MarvelCharacter> chars = marvelService.GetAllCharacters();
+            List<WrappedCharacter> chars = marvelService.GetAllCharacters();
 
             return ResponseEntity.ok().body(chars);
         }catch (Exception ex){
@@ -36,7 +37,7 @@ public class MarvelController {
     @ResponseBody
     public ResponseEntity<?> GetCharacter(int characterId){
         try{
-            MarvelCharacter character = marvelService.GetCharacter(characterId);
+            WrappedCharacter character = marvelService.GetCharacter(characterId);
 
             return ResponseEntity.ok().body(character);
         }catch (Exception ex){
